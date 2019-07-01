@@ -160,7 +160,11 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="CameraControl的作用以及实现"><a href="#CameraControl的作用以及实现" class="headerlink" title="CameraControl的作用以及实现"></a>CameraControl的作用以及实现</h1><p>camera由于在游戏中需要一个追踪的效果，而且也要时刻跟着玩家走，所以我们使用两个camera，一个专门跟着玩家，一个专门跟着前一个摄像头。</p>
+        <h1 id="3D-Game-Kit-的CameraSetting的作用"><a href="#3D-Game-Kit-的CameraSetting的作用" class="headerlink" title="3D Game Kit 的CameraSetting的作用"></a>3D Game Kit 的CameraSetting的作用</h1><hr>
+<p>CameraSettings是控制镜头移动的核心<br>（1）控制方式</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public enum InputChoice</span><br><span class="line">   &#123;</span><br><span class="line">       KeyboardAndMouse, Controller,</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>其中枚举Input类型（只能选择其一），一种是键盘和鼠标，一种是Controller。然后会有一个Invertsettings，选择X，Y轴的倒置：<br><img src="https://github.com/attemptto/attemptto.github.io/blob/master/camSetting.PNG?raw=true" alt="avatar"></p>
 
       
 
