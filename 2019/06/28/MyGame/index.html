@@ -8,20 +8,20 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="3D Game Kit 的CameraSetting的作用 CameraSettings是控制镜头移动的核心（1）控制方式 1234public enum InputChoice   &amp;#123;       KeyboardAndMouse, Controller,   &amp;#125;  其中枚举Input类型（只能选择其一），一种是键盘和鼠标，一种是Controller。然后会有一个Invert">
+  <meta name="description" content="3D Game Kit 的CameraSetting的作用 CameraSettings是控制镜头移动的核心，其中向我们展示了如何移动并操纵镜头。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
 <meta property="og:url" content="http://yoursite.com/2019/06/28/MyGame/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="3D Game Kit 的CameraSetting的作用 CameraSettings是控制镜头移动的核心（1）控制方式 1234public enum InputChoice   &amp;#123;       KeyboardAndMouse, Controller,   &amp;#125;  其中枚举Input类型（只能选择其一），一种是键盘和鼠标，一种是Controller。然后会有一个Invert">
+<meta property="og:description" content="3D Game Kit 的CameraSetting的作用 CameraSettings是控制镜头移动的核心，其中向我们展示了如何移动并操纵镜头。">
 <meta property="og:locale" content="ZH">
-<meta property="og:image" content="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/WkeszZ5Lf8p*kZLoDdmmqmnFVR9D8s5odzOlt*w5GD0!/b/dEYBAAAAAAAA&bo=OAHfAAAAAAADB8Q!&rf=viewer_4">
 <meta property="og:image" content="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/eFNIj45gZwYgtdb5n8dfbAcT4zeejimDfP**SxJ5wx4!/b/dL8AAAAAAAAA&bo=gAJnAQAAAAACl1c!&rf=viewer_4">
-<meta property="og:updated_time" content="2019-07-02T15:26:41.745Z">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/WkeszZ5Lf8p*kZLoDdmmqmnFVR9D8s5odzOlt*w5GD0!/b/dEYBAAAAAAAA&bo=OAHfAAAAAAADB8Q!&rf=viewer_4">
+<meta property="og:updated_time" content="2019-07-03T09:22:02.598Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="3D Game Kit 的CameraSetting的作用 CameraSettings是控制镜头移动的核心（1）控制方式 1234public enum InputChoice   &amp;#123;       KeyboardAndMouse, Controller,   &amp;#125;  其中枚举Input类型（只能选择其一），一种是键盘和鼠标，一种是Controller。然后会有一个Invert">
-<meta name="twitter:image" content="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/WkeszZ5Lf8p*kZLoDdmmqmnFVR9D8s5odzOlt*w5GD0!/b/dEYBAAAAAAAA&bo=OAHfAAAAAAADB8Q!&rf=viewer_4">
+<meta name="twitter:description" content="3D Game Kit 的CameraSetting的作用 CameraSettings是控制镜头移动的核心，其中向我们展示了如何移动并操纵镜头。">
+<meta name="twitter:image" content="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/eFNIj45gZwYgtdb5n8dfbAcT4zeejimDfP**SxJ5wx4!/b/dL8AAAAAAAAA&bo=gAJnAQAAAAACl1c!&rf=viewer_4">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -50,7 +50,7 @@
 <div class="intrude-less">
 	<header id="header" class="inner">
 		<a href="/" class="profilepic">
-			<img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1561774937018&amp;di=54270893e2702889ae0874b142d78edc&amp;imgtype=0&amp;src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201703%2F26%2F20170326161721_RyhXJ.thumb.700_0.png" class="js-avatar">
+			<img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b10000_10000&amp;sec=1562145450&amp;di=162d01b41d908a619a174899c5061adc&amp;src=http://b-ssl.duitang.com/uploads/item/201703/26/20170326161806_wYvzS.thumb.700_0.png" class="js-avatar">
 		</a>
 		<hgroup>
 		  <h1 class="header-author"><a href="/">风中孤独的一匹狼</a></h1>
@@ -108,7 +108,7 @@
 	<div class="intrude-less">
 		<header id="header" class="inner">
 			<div class="profilepic">
-				<img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b9999_10000&amp;sec=1561774937018&amp;di=54270893e2702889ae0874b142d78edc&amp;imgtype=0&amp;src=http%3A%2F%2Fb-ssl.duitang.com%2Fuploads%2Fitem%2F201703%2F26%2F20170326161721_RyhXJ.thumb.700_0.png" class="js-avatar">
+				<img src="https://timgsa.baidu.com/timg?image&amp;quality=80&amp;size=b10000_10000&amp;sec=1562145450&amp;di=162d01b41d908a619a174899c5061adc&amp;src=http://b-ssl.duitang.com/uploads/item/201703/26/20170326161806_wYvzS.thumb.700_0.png" class="js-avatar">
 			</div>
 			<hgroup>
 			  <h1 class="header-author js-header-author">风中孤独的一匹狼</h1>
@@ -163,7 +163,12 @@
     <div class="article-entry" itemprop="articleBody">
       
         <h1 id="3D-Game-Kit-的CameraSetting的作用"><a href="#3D-Game-Kit-的CameraSetting的作用" class="headerlink" title="3D Game Kit 的CameraSetting的作用"></a>3D Game Kit 的CameraSetting的作用</h1><hr>
-<p>CameraSettings是控制镜头移动的核心<br>（1）控制方式</p>
+<p><img src="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/eFNIj45gZwYgtdb5n8dfbAcT4zeejimDfP**SxJ5wx4!/b/dL8AAAAAAAAA&bo=gAJnAQAAAAACl1c!&rf=viewer_4" alt="avatar"><br>CameraSettings是控制镜头移动的核心，其中向我们展示了如何移动并操纵镜头。</p>
+<a id="more"></a>
+
+
+
+<p>（1）控制方式</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">public enum InputChoice</span><br><span class="line">   &#123;</span><br><span class="line">       KeyboardAndMouse, Controller,</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
 
 <p>其中枚举Input类型（只能选择其一），一种是键盘和鼠标，一种是Controller。然后会有一个Invertsettings，选择X，Y轴的倒置：<br><img src="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/WkeszZ5Lf8p*kZLoDdmmqmnFVR9D8s5odzOlt*w5GD0!/b/dEYBAAAAAAAA&bo=OAHfAAAAAAADB8Q!&rf=viewer_4" alt="avatar"></p>
@@ -176,8 +181,8 @@
 <p>playerController（写好的脚本）去找到PlayerController，然后判断是否是ellen且不为空，那么跟随的就是ellen（此处代码写的是PlayercController）</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">follow = playerController.transform;</span><br><span class="line"></span><br><span class="line">lookAt = follow.Find(&quot;HeadTarget&quot;);   //此处为从头顶看向</span><br><span class="line"></span><br><span class="line">if (playerController.cameraSettings == null)</span><br><span class="line">    playerController.cameraSettings = this;</span><br></pre></td></tr></table></figure>
 
-<p><img src="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/eFNIj45gZwYgtdb5n8dfbAcT4zeejimDfP**SxJ5wx4!/b/dL8AAAAAAAAA&bo=gAJnAQAAAAACl1c!&rf=viewer_4" alt="avatar"></p>
-
+<p>在此附上第一节的教学视频，希望可以对你有所帮助</p>
+<iframe height="400" width="700" src="http://player.youku.com/embed/XNDI1MzYxMzQyNA==" frameborder="0" 'allowfullscreen'></iframe>
       
 
       
