@@ -6,21 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>BattleManager | Hexo</title>
+  <title>CounterBack And Stunned | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#战斗管理员(BattleManager)部分和动作管理员(ActorManager) 战斗管理员和动作管理员的关系如下图，在此用了一个双向的箭头是因为，这两个部分可以直接相互传递信息">
+  <meta name="description" content="盾反状态为Dark souls中的灵魂动作，此次还会加上上一张部分的剩余（weapon模块）。我们先来看一下盾反的动画：首先在状态机中，放入stunned和counterback，stunned为子状态机，而counterBack则不需要。逻辑如下，我们需要在防御敌人进攻时，按下盾反，那么此时应该是左手的LeftIsSheild消勾，此时左手为武器状态。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="BattleManager">
-<meta property="og:url" content="http://yoursite.com/2019/07/05/BattleManager/index.html">
+<meta property="og:title" content="CounterBack And Stunned">
+<meta property="og:url" content="http://yoursite.com/2019/07/16/CounterBackAndStunned/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="#战斗管理员(BattleManager)部分和动作管理员(ActorManager) 战斗管理员和动作管理员的关系如下图，在此用了一个双向的箭头是因为，这两个部分可以直接相互传递信息">
+<meta property="og:description" content="盾反状态为Dark souls中的灵魂动作，此次还会加上上一张部分的剩余（weapon模块）。我们先来看一下盾反的动画：首先在状态机中，放入stunned和counterback，stunned为子状态机，而counterBack则不需要。逻辑如下，我们需要在防御敌人进攻时，按下盾反，那么此时应该是左手的LeftIsSheild消勾，此时左手为武器状态。">
 <meta property="og:locale" content="ZH">
-<meta property="og:image" content="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/0bMeXV*vKYJKGbWH6D*hHuTl2GXqQWfCg3lRIJVbdsU!/b/dLYAAAAAAAAA&bo=gAc4BAAAAAADB5k!&rf=viewer_4">
-<meta property="og:updated_time" content="2019-07-05T14:57:35.361Z">
+<meta property="og:image" content="http://www.3dmgame.com/uploads/allimg/160608/313_160608175623_1.gif">
+<meta property="og:image" content="http://a4.qpic.cn/psb?/V11Gv0JC0zhQAU/e4TAMNYtcNkgCxRTsfiss7xFb1TlPSRkR3qzYeqyQmw!/b/dL8AAAAAAAAA&ek=1&kp=1&pt=0&bo=gAc4BAAAAAADJ7k!&tl=1&vuin=1178278978&tm=1563285600&sce=60-2-2&rf=viewer_4">
+<meta property="og:updated_time" content="2019-07-16T14:54:17.017Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="BattleManager">
-<meta name="twitter:description" content="#战斗管理员(BattleManager)部分和动作管理员(ActorManager) 战斗管理员和动作管理员的关系如下图，在此用了一个双向的箭头是因为，这两个部分可以直接相互传递信息">
-<meta name="twitter:image" content="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/0bMeXV*vKYJKGbWH6D*hHuTl2GXqQWfCg3lRIJVbdsU!/b/dLYAAAAAAAAA&bo=gAc4BAAAAAADB5k!&rf=viewer_4">
+<meta name="twitter:title" content="CounterBack And Stunned">
+<meta name="twitter:description" content="盾反状态为Dark souls中的灵魂动作，此次还会加上上一张部分的剩余（weapon模块）。我们先来看一下盾反的动画：首先在状态机中，放入stunned和counterback，stunned为子状态机，而counterBack则不需要。逻辑如下，我们需要在防御敌人进攻时，按下盾反，那么此时应该是左手的LeftIsSheild消勾，此时左手为武器状态。">
+<meta name="twitter:image" content="http://www.3dmgame.com/uploads/allimg/160608/313_160608175623_1.gif">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -156,36 +157,37 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-BattleManager" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-CounterBackAndStunned" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      BattleManager
+      CounterBack And Stunned
     </h1>
   
 
         
-        <a href="/2019/07/05/BattleManager/" class="archive-article-date">
-  	<time datetime="2019-07-05T14:13:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-05</time>
+        <a href="/2019/07/16/CounterBackAndStunned/" class="archive-article-date">
+  	<time datetime="2019-07-16T14:30:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-16</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>#战斗管理员(BattleManager)部分和动作管理员(ActorManager)</p>
-<p>战斗管理员和动作管理员的关系如下图，在此用了一个双向的箭头是因为，这两个部分可以直接相互传递信息<br><img src="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/0bMeXV*vKYJKGbWH6D*hHuTl2GXqQWfCg3lRIJVbdsU!/b/dLYAAAAAAAAA&bo=gAc4BAAAAAADB5k!&rf=viewer_4" alt="avatar"></p>
+        <p>盾反状态为Dark souls中的灵魂动作，此次还会加上上一张部分的剩余（weapon模块）。我们先来看一下盾反的动画：<br><img src="http://www.3dmgame.com/uploads/allimg/160608/313_160608175623_1.gif" alt="avatar"><br>首先在状态机中，放入stunned和counterback，stunned为子状态机，而counterBack则不需要。<br>逻辑如下，我们需要在防御敌人进攻时，按下盾反，那么此时应该是左手的LeftIsSheild消勾，此时左手为武器状态。</p>
 <a id="more"></a>
-<p>在BattleManager中，我们添加了一个CapsuleCollider,用来当做防御状态的碰撞，这个大小和PlayerHandle的Collider相比，要小一些。<br>在和敌方相互攻击的时候，我们被一个动作打一下，才会产生一个hit信号。<br>这部分就是后续要学的，我将在每个动作的过程中打开weapon信号，而在结束时关闭信号，这部分在这篇中不会做详细的介绍。<br>接下来看一下，双向绑定的代码：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">  public ActorManager am;</span><br><span class="line">   </span><br><span class="line"> private CapsuleCollider defCol;</span><br><span class="line">/// Start is called before the first frame update</span><br><span class="line"> void Start()</span><br><span class="line">&#123;</span><br><span class="line">  defCol = GetComponent&lt;CapsuleCollider&gt;();</span><br><span class="line">  defCol.center = Vector3.up*1.0f;</span><br><span class="line">  defCol.height = 2.0f;</span><br><span class="line">  defCol.radius = 0.25f;</span><br><span class="line">  defCol.isTrigger = true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>可以看到，开始先获取的是ActorManager，这是为了调用am中的被攻击方法，然后创建了defense状态下的Collider。<br>而在ActorManager中：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">public BattleManager bm;</span><br><span class="line">   public ActorController ac;</span><br><span class="line">   </span><br><span class="line">   // Start is called before the first frame update</span><br><span class="line">   void Start()</span><br><span class="line">   &#123;</span><br><span class="line">       ac = GetComponent&lt;ActorController&gt;();</span><br><span class="line">       GameObject sensor = transform.Find(&quot;sensor&quot;).gameObject;</span><br><span class="line">       bm = sensor.GetComponent&lt;BattleManager&gt;();</span><br><span class="line">       if (bm == null)</span><br><span class="line">       &#123;</span><br><span class="line">          bm=sensor.AddComponent&lt;BattleManager&gt;();</span><br><span class="line">       &#125;</span><br><span class="line">       bm.am = this;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   // Update is called once per frame</span><br><span class="line">   void Update()</span><br><span class="line">   &#123;</span><br><span class="line">       </span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">   public void DoDamage()</span><br><span class="line">   &#123;</span><br><span class="line">       ac.IssueTrigger(&quot;hit&quot;);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+<p>具体代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">if((pi.rt||pi.lt)&amp;&amp;(CheckState(&quot;ground&quot;)|| CheckStateTag(&quot;attack&quot;)))</span><br><span class="line">        &#123;</span><br><span class="line">            if (pi.rt)</span><br><span class="line">            &#123;</span><br><span class="line">                //do heavy attack</span><br><span class="line">            &#125;</span><br><span class="line">            else </span><br><span class="line">            &#123;</span><br><span class="line">                if (!leftIsShield)</span><br><span class="line">                &#123;</span><br><span class="line">                    //do left heavy attack</span><br><span class="line">                &#125;</span><br><span class="line">                else</span><br><span class="line">                &#123;</span><br><span class="line">                    anim.SetTrigger(&quot;counterBack&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">                //do left heavy attack</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
 
-<p>看到第一步也是绑定BattleManager，这就实现了两方都可以调用其中方法。然后需要获取的是ActorController,去获取sensor上的battleManager<br>如果bm是空的话，就给他附一个BattleManager。<br>下面的DoDamage便是被攻击的IssueTrigger（此代码在ActorController中，set hit信号即可）。我们便实现了在Battle时，加入一个管理员的效果。<br>这个管理员控制我的Controller，让我对于外界的碰撞做出反应。</p>
+<p>此处的heavyAttack为重击，此部分放在后续中去做。<br>以上是如何从防御状态转变到盾反，我在此还是有个问题，就是进入defense的layer层左手的avatar不能跟着其他的动作一起，比如翻滚状态就会收起左手，这个问题<br>放后续解决。</p>
+<p>然后是我的actorManager全图：<br><img src="http://a4.qpic.cn/psb?/V11Gv0JC0zhQAU/e4TAMNYtcNkgCxRTsfiss7xFb1TlPSRkR3qzYeqyQmw!/b/dL8AAAAAAAAA&ek=1&kp=1&pt=0&bo=gAc4BAAAAAADJ7k!&tl=1&vuin=1178278978&tm=1563285600&sce=60-2-2&rf=viewer_4" alt="avatar"></p>
+<p>右侧部分呢：<br>（1）红色的碰撞体框框，碰到东西，幼小的身体收到了伤害，就告诉大哥BattleManager：“大哥我被人打了”。BattleManager会说：“是谁打我小弟我要去看看”。<br>（2）BattleManager告诉ActorManager说：”大哥我小弟被打了，你晓得是谁做的吗？”<br>（3）actorManager负责告诉StateManager:”此时受到的攻击或其他状态”。让stateManager去检查受到这个信号我该怎么做了，此时还要返回给ActorManager。<br>（4）ActorManager晓得了，然后一层层传递回刚才的红色碰撞框。</p>
+<p>左边部分呢：<br>（1）WeaponManager会管理左手和右手的武器，：“我左手是方天画戟，右手三尖两刃叉”。<br>（2）当我用我的方天画戟插了你的时候，我的方天画戟就说“是我插了你”<br>（3）WeaponData此部分我不想细说，因为关于武器数据（比如小刀砍你你觉得不疼，你换个猛男拿个青龙偃月刀试试）。这部分我会在后续的博客继续写出。</p>
+<p>今天只有一个部分的内容，明天再写另外一个ActorManager，实现两个对打的功能。好好睡觉，晚安。</p>
 
       
 
@@ -265,7 +267,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/05/BattleManager/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/16/CounterBackAndStunned/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -279,18 +281,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/07/CameraFollowCharacter/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          CameraFollowCharacter
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/07/01/MyGame/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">3D Game Kit 的CameraSetting的作用</div>
+    <a href="/2019/07/07/CameraFollowCharacter/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CameraFollowCharacter</div>
       <i class="icon-circle-right"></i>
     </a>
   
