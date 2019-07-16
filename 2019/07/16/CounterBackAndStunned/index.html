@@ -16,8 +16,8 @@
 <meta property="og:description" content="盾反状态为Dark souls中的灵魂动作，此次还会加上上一张部分的剩余（weapon模块）。我们先来看一下盾反的动画：首先在状态机中，放入stunned和counterback，stunned为子状态机，而counterBack则不需要。逻辑如下，我们需要在防御敌人进攻时，按下盾反，那么此时应该是左手的LeftIsSheild消勾，此时左手为武器状态。">
 <meta property="og:locale" content="ZH">
 <meta property="og:image" content="http://www.3dmgame.com/uploads/allimg/160608/313_160608175623_1.gif">
-<meta property="og:image" content="http://a4.qpic.cn/psb?/V11Gv0JC0zhQAU/e4TAMNYtcNkgCxRTsfiss7xFb1TlPSRkR3qzYeqyQmw!/b/dL8AAAAAAAAA&ek=1&kp=1&pt=0&bo=gAc4BAAAAAADJ7k!&tl=1&vuin=1178278978&tm=1563285600&sce=60-2-2&rf=viewer_4">
-<meta property="og:updated_time" content="2019-07-16T14:54:17.017Z">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/e4TAMNYtcNkgCxRTsfiss7xFb1TlPSRkR3qzYeqyQmw!/b/dL8AAAAAAAAA&bo=gAc4BAAAAAADB5k!&rf=viewer_4">
+<meta property="og:updated_time" content="2019-07-16T14:59:06.711Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CounterBack And Stunned">
 <meta name="twitter:description" content="盾反状态为Dark souls中的灵魂动作，此次还会加上上一张部分的剩余（weapon模块）。我们先来看一下盾反的动画：首先在状态机中，放入stunned和counterback，stunned为子状态机，而counterBack则不需要。逻辑如下，我们需要在防御敌人进攻时，按下盾反，那么此时应该是左手的LeftIsSheild消勾，此时左手为武器状态。">
@@ -184,7 +184,7 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">if((pi.rt||pi.lt)&amp;&amp;(CheckState(&quot;ground&quot;)|| CheckStateTag(&quot;attack&quot;)))</span><br><span class="line">        &#123;</span><br><span class="line">            if (pi.rt)</span><br><span class="line">            &#123;</span><br><span class="line">                //do heavy attack</span><br><span class="line">            &#125;</span><br><span class="line">            else </span><br><span class="line">            &#123;</span><br><span class="line">                if (!leftIsShield)</span><br><span class="line">                &#123;</span><br><span class="line">                    //do left heavy attack</span><br><span class="line">                &#125;</span><br><span class="line">                else</span><br><span class="line">                &#123;</span><br><span class="line">                    anim.SetTrigger(&quot;counterBack&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">                //do left heavy attack</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
 
 <p>此处的heavyAttack为重击，此部分放在后续中去做。<br>以上是如何从防御状态转变到盾反，我在此还是有个问题，就是进入defense的layer层左手的avatar不能跟着其他的动作一起，比如翻滚状态就会收起左手，这个问题<br>放后续解决。</p>
-<p>然后是我的actorManager全图：<br><img src="http://a4.qpic.cn/psb?/V11Gv0JC0zhQAU/e4TAMNYtcNkgCxRTsfiss7xFb1TlPSRkR3qzYeqyQmw!/b/dL8AAAAAAAAA&ek=1&kp=1&pt=0&bo=gAc4BAAAAAADJ7k!&tl=1&vuin=1178278978&tm=1563285600&sce=60-2-2&rf=viewer_4" alt="avatar"></p>
+<p>然后是我的actorManager全图：<br><img src="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/e4TAMNYtcNkgCxRTsfiss7xFb1TlPSRkR3qzYeqyQmw!/b/dL8AAAAAAAAA&bo=gAc4BAAAAAADB5k!&rf=viewer_4" alt="avatar"></p>
 <p>右侧部分呢：<br>（1）红色的碰撞体框框，碰到东西，幼小的身体收到了伤害，就告诉大哥BattleManager：“大哥我被人打了”。BattleManager会说：“是谁打我小弟我要去看看”。<br>（2）BattleManager告诉ActorManager说：”大哥我小弟被打了，你晓得是谁做的吗？”<br>（3）actorManager负责告诉StateManager:”此时受到的攻击或其他状态”。让stateManager去检查受到这个信号我该怎么做了，此时还要返回给ActorManager。<br>（4）ActorManager晓得了，然后一层层传递回刚才的红色碰撞框。</p>
 <p>左边部分呢：<br>（1）WeaponManager会管理左手和右手的武器，：“我左手是方天画戟，右手三尖两刃叉”。<br>（2）当我用我的方天画戟插了你的时候，我的方天画戟就说“是我插了你”<br>（3）WeaponData此部分我不想细说，因为关于武器数据（比如小刀砍你你觉得不疼，你换个猛男拿个青龙偃月刀试试）。这部分我会在后续的博客继续写出。</p>
 <p>今天只有一个部分的内容，明天再写另外一个ActorManager，实现两个对打的功能。好好睡觉，晚安。</p>
@@ -282,8 +282,8 @@
 <nav id="article-nav">
   
   
-    <a href="/2019/07/07/CameraFollowCharacter/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">CameraFollowCharacter</div>
+    <a href="/2019/07/05/BattleManager/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">BattleManager</div>
       <i class="icon-circle-right"></i>
     </a>
   

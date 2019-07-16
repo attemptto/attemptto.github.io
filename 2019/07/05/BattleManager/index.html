@@ -15,12 +15,12 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="#战斗管理员(BattleManager)部分和动作管理员(ActorManager) 战斗管理员和动作管理员的关系如下图，在此用了一个双向的箭头是因为，这两个部分可以直接相互传递信息">
 <meta property="og:locale" content="ZH">
-<meta property="og:image" content="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/0bMeXV*vKYJKGbWH6D*hHuTl2GXqQWfCg3lRIJVbdsU!/b/dLYAAAAAAAAA&bo=gAc4BAAAAAADB5k!&rf=viewer_4">
-<meta property="og:updated_time" content="2019-07-05T14:57:35.361Z">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/cdpmO4T9yylG2D6.v2tQR7ilAYxWuMVPZpt8rJRGuT0!/b/dL8AAAAAAAAA&bo=9wLHAQAAAAADBxE!&rf=viewer_4">
+<meta property="og:updated_time" content="2019-07-16T15:05:53.308Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BattleManager">
 <meta name="twitter:description" content="#战斗管理员(BattleManager)部分和动作管理员(ActorManager) 战斗管理员和动作管理员的关系如下图，在此用了一个双向的箭头是因为，这两个部分可以直接相互传递信息">
-<meta name="twitter:image" content="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/0bMeXV*vKYJKGbWH6D*hHuTl2GXqQWfCg3lRIJVbdsU!/b/dLYAAAAAAAAA&bo=gAc4BAAAAAADB5k!&rf=viewer_4">
+<meta name="twitter:image" content="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/cdpmO4T9yylG2D6.v2tQR7ilAYxWuMVPZpt8rJRGuT0!/b/dL8AAAAAAAAA&bo=9wLHAQAAAAADBxE!&rf=viewer_4">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -177,7 +177,7 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>#战斗管理员(BattleManager)部分和动作管理员(ActorManager)</p>
-<p>战斗管理员和动作管理员的关系如下图，在此用了一个双向的箭头是因为，这两个部分可以直接相互传递信息<br><img src="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/0bMeXV*vKYJKGbWH6D*hHuTl2GXqQWfCg3lRIJVbdsU!/b/dLYAAAAAAAAA&bo=gAc4BAAAAAADB5k!&rf=viewer_4" alt="avatar"></p>
+<p>战斗管理员和动作管理员的关系如下图，在此用了一个双向的箭头是因为，这两个部分可以直接相互传递信息<br><img src="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/cdpmO4T9yylG2D6.v2tQR7ilAYxWuMVPZpt8rJRGuT0!/b/dL8AAAAAAAAA&bo=9wLHAQAAAAADBxE!&rf=viewer_4" alt="avatar"></p>
 <a id="more"></a>
 <p>在BattleManager中，我们添加了一个CapsuleCollider,用来当做防御状态的碰撞，这个大小和PlayerHandle的Collider相比，要小一些。<br>在和敌方相互攻击的时候，我们被一个动作打一下，才会产生一个hit信号。<br>这部分就是后续要学的，我将在每个动作的过程中打开weapon信号，而在结束时关闭信号，这部分在这篇中不会做详细的介绍。<br>接下来看一下，双向绑定的代码：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">  public ActorManager am;</span><br><span class="line">   </span><br><span class="line"> private CapsuleCollider defCol;</span><br><span class="line">/// Start is called before the first frame update</span><br><span class="line"> void Start()</span><br><span class="line">&#123;</span><br><span class="line">  defCol = GetComponent&lt;CapsuleCollider&gt;();</span><br><span class="line">  defCol.center = Vector3.up*1.0f;</span><br><span class="line">  defCol.height = 2.0f;</span><br><span class="line">  defCol.radius = 0.25f;</span><br><span class="line">  defCol.isTrigger = true;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
@@ -279,11 +279,11 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/07/CameraFollowCharacter/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2019/07/16/CounterBackAndStunned/" id="article-nav-newer" class="article-nav-link-wrap">
       <i class="icon-circle-left"></i>
       <div class="article-nav-title">
         
-          CameraFollowCharacter
+          CounterBack And Stunned
         
       </div>
     </a>
