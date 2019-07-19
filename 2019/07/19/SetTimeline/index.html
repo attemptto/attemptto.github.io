@@ -6,22 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>CounterBack And Stunned | Hexo</title>
+  <title>Timeline的设置和锁定Animation的操作 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="盾反状态为Dark souls中的灵魂动作，此次还会加上上一张部分的剩余（weapon模块）。我们先来看一下盾反的动画：首先在状态机中，放入stunned和counterback，stunned为子状态机，而counterBack则不需要。逻辑如下，我们需要在防御敌人进攻时，按下盾反，那么此时应该是左手的LeftIsSheild消勾，此时左手为武器状态。">
+  <meta name="description" content="Timeline和具体锁定Animation的操作 此部分篇幅较大，所以希望可以自己慢慢吸收。 Part1   新增Timeline首先创建一个新的Gameobject，然后在上方的component选择Playable的playable的director。此时会出现一个以下的内容：">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CounterBack And Stunned">
-<meta property="og:url" content="http://yoursite.com/2019/07/16/CounterBackAndStunned/index.html">
+<meta property="og:title" content="Timeline的设置和锁定Animation的操作">
+<meta property="og:url" content="http://yoursite.com/2019/07/19/SetTimeline/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="盾反状态为Dark souls中的灵魂动作，此次还会加上上一张部分的剩余（weapon模块）。我们先来看一下盾反的动画：首先在状态机中，放入stunned和counterback，stunned为子状态机，而counterBack则不需要。逻辑如下，我们需要在防御敌人进攻时，按下盾反，那么此时应该是左手的LeftIsSheild消勾，此时左手为武器状态。">
+<meta property="og:description" content="Timeline和具体锁定Animation的操作 此部分篇幅较大，所以希望可以自己慢慢吸收。 Part1   新增Timeline首先创建一个新的Gameobject，然后在上方的component选择Playable的playable的director。此时会出现一个以下的内容：">
 <meta property="og:locale" content="ZH">
-<meta property="og:image" content="http://www.3dmgame.com/uploads/allimg/160608/313_160608175623_1.gif">
-<meta property="og:image" content="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/e4TAMNYtcNkgCxRTsfiss7xFb1TlPSRkR3qzYeqyQmw!/b/dL8AAAAAAAAA&bo=gAc4BAAAAAADB5k!&rf=viewer_4">
-<meta property="og:updated_time" content="2019-07-16T14:59:06.711Z">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/L7fxg08tVlIFutS50prqx9dwHmO5Bs8AlJjiJmTdfzY!/b/dDcBAAAAAAAA&bo=gAc4BIAHOAQDByI!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/GYW6upznWCCbGHuoG40HqcBHngKG8yf*xbGV**Sh2SA!/b/dEABAAAAAAAA&bo=mAXKAgAAAAADB3c!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/C3gsSgi8Hqz6l9*H5xD2wdJqgUexkcvPR.BNRnAW3cQ!/b/dL8AAAAAAAAA&bo=gAJwAQAAAAACl0A!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/L8DvB2Iyo2MVg2fEsGzDwYTaFHdhSSQ8qpYeKlm*P.w!/b/dL8AAAAAAAAA&bo=pQLrAAAAAAADB24!&rf=viewer_4">
+<meta property="og:updated_time" content="2019-07-19T14:55:27.211Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CounterBack And Stunned">
-<meta name="twitter:description" content="盾反状态为Dark souls中的灵魂动作，此次还会加上上一张部分的剩余（weapon模块）。我们先来看一下盾反的动画：首先在状态机中，放入stunned和counterback，stunned为子状态机，而counterBack则不需要。逻辑如下，我们需要在防御敌人进攻时，按下盾反，那么此时应该是左手的LeftIsSheild消勾，此时左手为武器状态。">
-<meta name="twitter:image" content="http://www.3dmgame.com/uploads/allimg/160608/313_160608175623_1.gif">
+<meta name="twitter:title" content="Timeline的设置和锁定Animation的操作">
+<meta name="twitter:description" content="Timeline和具体锁定Animation的操作 此部分篇幅较大，所以希望可以自己慢慢吸收。 Part1   新增Timeline首先创建一个新的Gameobject，然后在上方的component选择Playable的playable的director。此时会出现一个以下的内容：">
+<meta name="twitter:image" content="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/L7fxg08tVlIFutS50prqx9dwHmO5Bs8AlJjiJmTdfzY!/b/dDcBAAAAAAAA&bo=gAc4BIAHOAQDByI!&rf=viewer_4">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -157,37 +159,46 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-CounterBackAndStunned" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-SetTimeline" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
     <h1 class="article-title" itemprop="name">
-      CounterBack And Stunned
+      Timeline的设置和锁定Animation的操作
     </h1>
   
 
         
-        <a href="/2019/07/16/CounterBackAndStunned/" class="archive-article-date">
-  	<time datetime="2019-07-16T14:30:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-16</time>
+        <a href="/2019/07/19/SetTimeline/" class="archive-article-date">
+  	<time datetime="2019-07-19T12:31:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-19</time>
 </a>
         
       </header>
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>盾反状态为Dark souls中的灵魂动作，此次还会加上上一张部分的剩余（weapon模块）。我们先来看一下盾反的动画：<br><img src="http://www.3dmgame.com/uploads/allimg/160608/313_160608175623_1.gif" alt="avatar"><br>首先在状态机中，放入stunned和counterback，stunned为子状态机，而counterBack则不需要。<br>逻辑如下，我们需要在防御敌人进攻时，按下盾反，那么此时应该是左手的LeftIsSheild消勾，此时左手为武器状态。</p>
+        <p>Timeline和具体锁定Animation的操作<br><img src="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/L7fxg08tVlIFutS50prqx9dwHmO5Bs8AlJjiJmTdfzY!/b/dDcBAAAAAAAA&bo=gAc4BIAHOAQDByI!&rf=viewer_4" alt="avatar"></p>
+<p>此部分篇幅较大，所以希望可以自己慢慢吸收。</p>
+<p>Part1   新增Timeline<br>首先创建一个新的Gameobject，然后在上方的component选择Playable的playable的director。<br>此时会出现一个以下的内容：</p>
 <a id="more"></a>
+<p><img src="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/GYW6upznWCCbGHuoG40HqcBHngKG8yf*xbGV**Sh2SA!/b/dEABAAAAAAAA&bo=mAXKAgAAAAADB3c!&rf=viewer_4" alt="avatar"></p>
+<p>Part2   设置参数<br>第一行和第二行分别是我的Attacker和Victim，这个动画播放的是我盾反后重击敌方：</p>
+<p><img src="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/C3gsSgi8Hqz6l9*H5xD2wdJqgUexkcvPR.BNRnAW3cQ!/b/dL8AAAAAAAAA&bo=gAJwAQAAAAACl0A!&rf=viewer_4" alt="avatar"></p>
+<p>第三行是我的direction Light，先前部分我设置的是红色，然后调回白光，这个地方，需要注意两个叠加的效果，如果两部分重合，那么会有一个叠加的渲染效果。<br>上图中的红色一幕就是Light的功劳。</p>
+<p>第四行是我自己加入的，点击Window上的Timeline Playable Wizard选项，然后自己创建一个。<br>standard Blend Playable 选中会默认生成标准的，一般不点击。<br>而Track Binding Type是轨迹捆绑，一般选择Camera（此功能我也没有细细研究）<br>Exposed Referense 这个选项是后续可以添加的部分，我在此选择了上一部分的ActorManager。后面就可以直接将ActorManager拖入（此部分可以多加）。</p>
+<p>然后后面是我的重头，behavior部分。<br>此部分可以添加具体的动作。</p>
+<p>都选择完毕后，生成一个文件夹，名字就是刚才的project name，这时你会发现在文件里面有了一个同名的文件夹，其中应该有四个文件。<br><img src="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/L8DvB2Iyo2MVg2fEsGzDwYTaFHdhSSQ8qpYeKlm*P.w!/b/dL8AAAAAAAAA&bo=pQLrAAAAAAADB24!&rf=viewer_4" alt="avatar"></p>
+<p>part3   具体的MySuperPlayableBehavior</p>
+<p>今天我只带来MySuperPlayableBehavior此部分的内容，这部分是我们在控制导演演戏中的最重的部分，他负责CUT和ACTION时具体的动作，比如我实现的在开始的时候，我希望我的角色妹妹进入一个lock状态，那么我就不会被别人再攻击或者受到外界因素影响，我此时就会在动画开始播放时，进入此状态：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public override void OnGraphStart(Playable playable)</span><br><span class="line">&#123;</span><br><span class="line">    pd = (PlayableDirector)playable.GetGraph().GetResolver();</span><br><span class="line">    foreach (var track in pd.playableAsset.outputs)</span><br><span class="line">    &#123;</span><br><span class="line">        if (track.streamName == &quot;My Super Playable Track&quot;)</span><br><span class="line">        &#123;</span><br><span class="line">            ActorManager am = (ActorManager) pd.GetGenericBinding(track.sourceObject);</span><br><span class="line">            am.LockUnLockActorController(true);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>具体代码如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">if((pi.rt||pi.lt)&amp;&amp;(CheckState(&quot;ground&quot;)|| CheckStateTag(&quot;attack&quot;)))</span><br><span class="line">        &#123;</span><br><span class="line">            if (pi.rt)</span><br><span class="line">            &#123;</span><br><span class="line">                //do heavy attack</span><br><span class="line">            &#125;</span><br><span class="line">            else </span><br><span class="line">            &#123;</span><br><span class="line">                if (!leftIsShield)</span><br><span class="line">                &#123;</span><br><span class="line">                    //do left heavy attack</span><br><span class="line">                &#125;</span><br><span class="line">                else</span><br><span class="line">                &#123;</span><br><span class="line">                    anim.SetTrigger(&quot;counterBack&quot;);</span><br><span class="line">                &#125;</span><br><span class="line">                //do left heavy attack</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br></pre></td></tr></table></figure>
+<p>我上面重写了OnGraphStart的方法，然后pd就是我的PlayerAbleDirector（就是我的导演），此时他会去GetResolver，然后转换成PlayerAbleDirector类型，然后从他的playableAssets的output中读出每个部分，<br>然后去检测名字是否是在此动画播放的时刻，那么此时，我就Lock我的Character。同理，解锁的原理是一样的：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">public override void OnGraphStart(Playable playable)</span><br><span class="line">&#123;</span><br><span class="line">    pd = (PlayableDirector)playable.GetGraph().GetResolver();</span><br><span class="line">    foreach (var track in pd.playableAsset.outputs)</span><br><span class="line">    &#123;</span><br><span class="line">        if (track.streamName == &quot;My Super Playable Track&quot;)</span><br><span class="line">        &#123;</span><br><span class="line">            ActorManager am = (ActorManager) pd.GetGenericBinding(track.sourceObject);</span><br><span class="line">            am.LockUnLockActorController(false);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>此处的heavyAttack为重击，此部分放在后续中去做。<br>以上是如何从防御状态转变到盾反，我在此还是有个问题，就是进入defense的layer层左手的avatar不能跟着其他的动作一起，比如翻滚状态就会收起左手，这个问题<br>放后续解决。</p>
-<p>然后是我的actorManager全图：<br><img src="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/e4TAMNYtcNkgCxRTsfiss7xFb1TlPSRkR3qzYeqyQmw!/b/dL8AAAAAAAAA&bo=gAc4BAAAAAADB5k!&rf=viewer_4" alt="avatar"></p>
-<p>右侧部分呢：<br>（1）红色的碰撞体框框，碰到东西，幼小的身体收到了伤害，就告诉大哥BattleManager：“大哥我被人打了”。BattleManager会说：“是谁打我小弟我要去看看”。<br>（2）BattleManager告诉ActorManager说：”大哥我小弟被打了，你晓得是谁做的吗？”<br>（3）actorManager负责告诉StateManager:”此时受到的攻击或其他状态”。让stateManager去检查受到这个信号我该怎么做了，此时还要返回给ActorManager。<br>（4）ActorManager晓得了，然后一层层传递回刚才的红色碰撞框。</p>
-<p>左边部分呢：<br>（1）WeaponManager会管理左手和右手的武器，：“我左手是方天画戟，右手三尖两刃叉”。<br>（2）当我用我的方天画戟插了你的时候，我的方天画戟就说“是我插了你”<br>（3）WeaponData此部分我不想细说，因为关于武器数据（比如小刀砍你你觉得不疼，你换个猛男拿个青龙偃月刀试试）。这部分我会在后续的博客继续写出。</p>
-<p>今天只有一个部分的内容，明天再写另外一个ActorManager，实现两个对打的功能。好好睡觉，晚安。</p>
+<p>这部分是timeline的第一节，我后续会继续学习timeline的更多操作，还有Camera位置的变换。希望能与你共同进步。</p>
+<p>晚安，小伙伴！</p>
 
       
 
@@ -267,7 +278,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/16/CounterBackAndStunned/" alt="微信分享二维码">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/19/SetTimeline/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -281,18 +292,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2019/07/19/SetTimeline/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Timeline的设置和锁定Animation的操作
-        
-      </div>
-    </a>
   
-  
-    <a href="/2019/07/05/BattleManager/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">BattleManager</div>
+    <a href="/2019/07/16/CounterBackAndStunned/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">CounterBack And Stunned</div>
       <i class="icon-circle-right"></i>
     </a>
   
