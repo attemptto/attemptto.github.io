@@ -6,18 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>InteractionManager的使用 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我会坚持下去，就像坚持喜欢你一样">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="InteractionManager我需要他是在我开宝箱，打boss，做最后一击的时候。 //此处是我的红色Cube（具体是Sensor层，因为我需要在后续，使我的Sensor和其相撞，然后输出相撞的名字，当然你也可以在此添加更多的物件我就不赘述了）">
+<meta property="og:type" content="article">
+<meta property="og:title" content="InteractionManager的使用">
+<meta property="og:url" content="http://yoursite.com/2019/07/25/InteractionManager/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="我会坚持下去，就像坚持喜欢你一样">
+<meta property="og:description" content="InteractionManager我需要他是在我开宝箱，打boss，做最后一击的时候。 //此处是我的红色Cube（具体是Sensor层，因为我需要在后续，使我的Sensor和其相撞，然后输出相撞的名字，当然你也可以在此添加更多的物件我就不赘述了）">
 <meta property="og:locale" content="ZH">
+<meta property="og:image" content="http://a4.qpic.cn/psb?/V11Gv0JC0zhQAU/0afSeV8UA7Ks0lgcthkrmknTIJJ9SsHOpN6HZUBDFHE!/c/dPMAAAAAAAAA&ek=1&kp=1&pt=0&bo=AQWAAnYHugMDVzw!&tl=1&vuin=1178278978&tm=1564099200&sce=60-2-2&rf=0-0">
+<meta property="og:updated_time" content="2019-07-26T00:20:44.236Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="我会坚持下去，就像坚持喜欢你一样">
+<meta name="twitter:title" content="InteractionManager的使用">
+<meta name="twitter:description" content="InteractionManager我需要他是在我开宝箱，打boss，做最后一击的时候。 //此处是我的红色Cube（具体是Sensor层，因为我需要在后续，使我的Sensor和其相撞，然后输出相撞的名字，当然你也可以在此添加更多的物件我就不赘述了）">
+<meta name="twitter:image" content="http://a4.qpic.cn/psb?/V11Gv0JC0zhQAU/0afSeV8UA7Ks0lgcthkrmknTIJJ9SsHOpN6HZUBDFHE!/c/dPMAAAAAAAAA&ek=1&kp=1&pt=0&bo=AQWAAnYHugMDVzw!&tl=1&vuin=1178278978&tm=1564099200&sce=60-2-2&rf=0-0">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -153,16 +156,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-InteractionManager" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-InteractionManager" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/25/InteractionManager/">InteractionManager的使用</a>
+    <h1 class="article-title" itemprop="name">
+      InteractionManager的使用
     </h1>
   
 
@@ -176,11 +177,59 @@
     <div class="article-entry" itemprop="articleBody">
       
         <p>InteractionManager我需要他是在我开宝箱，打boss，做最后一击的时候。<br><img src="http://a4.qpic.cn/psb?/V11Gv0JC0zhQAU/0afSeV8UA7Ks0lgcthkrmknTIJJ9SsHOpN6HZUBDFHE!/c/dPMAAAAAAAAA&ek=1&kp=1&pt=0&bo=AQWAAnYHugMDVzw!&tl=1&vuin=1178278978&tm=1564099200&sce=60-2-2&rf=0-0" alt="avatar"> //此处是我的红色Cube（具体是Sensor层，因为我需要在后续，使我的Sensor和其相撞，然后输出相撞的名字，当然你也可以在此添加更多的物件我就不赘述了）</p>
-        
-          <a class="article-more-a" href="/2019/07/25/InteractionManager/#more">more >></a>
-        
+<a id="more"></a>
+
+<p>好接下来我会具体的介绍为什么和如何使用InteractionManager：</p>
+<p>Step1：为什么要使用这个模式？</p>
+<p>我们都知道，在游戏中我们在怪物身旁，宝箱前面，和打boss的最后一击，有时是要在特定位置才能见效的（可以参考我上面的红色Cube）。所以我们需要一个交互的东西来告知我，现在我和红色框框相撞了，宝箱应该打开了（等等）。</p>
+<p>step2：实现的流程？</p>
+<p>首先我需要创建的是EventCasterManger，这个是用来存储Event信息的（比如有不同的碰撞的效果），此处我只存了frontstab，也就是向前刺的这个剧本。<br>其次我需要创建InteractinManager脚本，然后去检测碰撞的EventCasterManager的名字，在OnTriggerEnter中添加ecastms，代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">void OnTriggerEnter(Collider col)</span><br><span class="line"> &#123;</span><br><span class="line">     EventCasterManager[] ecastms = col.GetComponents&lt;EventCasterManager&gt;();</span><br><span class="line">     foreach (var ecastm in ecastms)</span><br><span class="line">     &#123;</span><br><span class="line">         if (!overlapEcastms.Contains(ecastm))</span><br><span class="line">         &#123;</span><br><span class="line">             overlapEcastms.Add(ecastm);</span><br><span class="line">         &#125;</span><br><span class="line">     &#125;</span><br><span class="line"></span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>创建数组，检测所有被碰的EventCaster，然后加入overlapecastms数组，同理，离开时的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">void OnTriggerExit(Collider col)</span><br><span class="line">  &#123;</span><br><span class="line">      EventCasterManager[] ecastms = col.GetComponents&lt;EventCasterManager&gt;();</span><br><span class="line">      foreach (var ecastm in ecastms)</span><br><span class="line">      &#123;</span><br><span class="line">          if (overlapEcastms.Contains(ecastm))</span><br><span class="line">          &#123;</span><br><span class="line">              overlapEcastms.Remove(ecastm);</span><br><span class="line">          &#125;</span><br><span class="line">      &#125;</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>具体实现我用了一个DoAction检测，还有就是我在此过程用了一个Unity的event：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">public delegate void OnActionDelegate(); //delegate是Unity一个类</span><br><span class="line"></span><br><span class="line">public event OnActionDelegate OnAction;// 使用OnActionDelegate类创建一个新类，其中Onaction是其event</span><br></pre></td></tr></table></figure>
+
+<p>附上一个Delegate的使用方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">using UnityEngine;</span><br><span class="line">using System.Collections;</span><br><span class="line"></span><br><span class="line">public class DelegateScript : MonoBehaviour </span><br><span class="line">&#123;   </span><br><span class="line">    delegate void MyDelegate(int num);</span><br><span class="line">    MyDelegate myDelegate;</span><br><span class="line">    </span><br><span class="line"></span><br><span class="line">    void Start () </span><br><span class="line">    &#123;</span><br><span class="line">        myDelegate = PrintNum;</span><br><span class="line">        myDelegate(50);</span><br><span class="line">        </span><br><span class="line">        myDelegate = DoubleNum;</span><br><span class="line">        myDelegate(50);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void PrintNum(int num)</span><br><span class="line">    &#123;</span><br><span class="line">        print (&quot;Print Num: &quot; + num);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    void DoubleNum(int num)</span><br><span class="line">    &#123;</span><br><span class="line">        print (&quot;Double Num: &quot; + num * 2);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后就是我的实现，首先我需要在PlayerInput中把action的键赋值，这次我用的是防御键：<br>action = buttonDefense.Onpressed;<br>那么我就需要在ActorManager中去加入我的DoAction1方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">public void DoAction1()</span><br><span class="line"> &#123;</span><br><span class="line">     if (im.overlapEcastms.Count != 0)</span><br><span class="line">     &#123;</span><br><span class="line">         print(im.overlapEcastms[0].eventName);</span><br><span class="line">     &#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后去在我的Onaction中将这个方法加入：<br>ac.OnAction+=DoAction1;这个地方，也就体现了Unity的event的好用性，可以直接将方法加入。</p>
+<p>好到这里，我们就可以去调用了，用来检测我们到底是哪个框框和我的Sensor层在碰撞。</p>
+<p>这两天我在复习考研高数，真的好难啊。我买了蔡升达老师的设计模式，第一节就给我看的懵逼懵逼的，状态模式也许我会在复习许久之后专门写一篇关于state模式部分的文章，不过那都是后话了。</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/pmDOBzXo4ariR2TrffEqCNMwTL3Ow0plI4YIhXvAVuo!/b/dFYBAAAAAAAA&amp;bo=RgIzAgAAAAADB1c!&amp;rf=viewer_4">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -191,10 +240,73 @@
       
 
       
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/07/25/InteractionManager/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/07/20/DirectorManager/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">DirectorManager设置</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -214,319 +326,14 @@
 
 
 
-
   
-    <article id="post-DirectorManager" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/20/DirectorManager/">DirectorManager设置</a>
-    </h1>
   
 
-        
-        <a href="/2019/07/20/DirectorManager/" class="archive-article-date">
-  	<time datetime="2019-07-20T14:43:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>关联的图片我先放上来啊：</p>
-<p><img src="http://a4.qpic.cn/psb?/V11Gv0JC0zhQAU/72O2pe386h1WKWBnRRDpTUfXHFTX1RLpIwtX4AKwT*I!/b/dFMBAAAAAAAA&ek=1&kp=1&pt=0&bo=gAc4BIAHOAQDJwI!&tl=1&vuin=1178278978&tm=1563631200&sce=60-2-2&rf=viewer_4" alt="avatar"></p>
-<p>DirectorManager，首先在开始的时候直接给所添加的物件附上一个PlayableDirector：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[RequireComponent(typeof(PlayableDirector))]</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/07/20/DirectorManager/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-SetTimeline" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/19/SetTimeline/">Timeline的设置和锁定Animation的操作</a>
-    </h1>
   
 
-        
-        <a href="/2019/07/19/SetTimeline/" class="archive-article-date">
-  	<time datetime="2019-07-19T12:31:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Timeline和具体锁定Animation的操作<br><img src="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/L7fxg08tVlIFutS50prqx9dwHmO5Bs8AlJjiJmTdfzY!/b/dDcBAAAAAAAA&bo=gAc4BIAHOAQDByI!&rf=viewer_4" alt="avatar"></p>
-<p>此部分篇幅较大，所以希望可以自己慢慢吸收。</p>
-<p>Part1   新增Timeline<br>首先创建一个新的Gameobject，然后在上方的component选择Playable的playable的director。<br>此时会出现一个以下的内容：</p>
-        
-          <a class="article-more-a" href="/2019/07/19/SetTimeline/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CounterBackAndStunned" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/16/CounterBackAndStunned/">CounterBack And Stunned</a>
-    </h1>
   
 
-        
-        <a href="/2019/07/16/CounterBackAndStunned/" class="archive-article-date">
-  	<time datetime="2019-07-16T14:30:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>盾反状态为Dark souls中的灵魂动作，此次还会加上上一张部分的剩余（weapon模块）。我们先来看一下盾反的动画：<br><img src="http://www.3dmgame.com/uploads/allimg/160608/313_160608175623_1.gif" alt="avatar"><br>首先在状态机中，放入stunned和counterback，stunned为子状态机，而counterBack则不需要。<br>逻辑如下，我们需要在防御敌人进攻时，按下盾反，那么此时应该是左手的LeftIsSheild消勾，此时左手为武器状态。</p>
-        
-          <a class="article-more-a" href="/2019/07/16/CounterBackAndStunned/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-BattleManager" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/05/BattleManager/">BattleManager</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/05/BattleManager/" class="archive-article-date">
-  	<time datetime="2019-07-05T14:13:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#战斗管理员(BattleManager)部分和动作管理员(ActorManager)</p>
-<p>战斗管理员和动作管理员的关系如下图，在此用了一个双向的箭头是因为，这两个部分可以直接相互传递信息<br><img src="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/cdpmO4T9yylG2D6.v2tQR7ilAYxWuMVPZpt8rJRGuT0!/b/dL8AAAAAAAAA&bo=9wLHAQAAAAADBxE!&rf=viewer_4" alt="avatar"></p>
-        
-          <a class="article-more-a" href="/2019/07/05/BattleManager/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MyGame" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/01/MyGame/">3D Game Kit 的CameraSetting的作用</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/01/MyGame/" class="archive-article-date">
-  	<time datetime="2019-07-01T14:13:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/eFNIj45gZwYgtdb5n8dfbAcT4zeejimDfP**SxJ5wx4!/b/dL8AAAAAAAAA&bo=gAJnAQAAAAACl1c!&rf=viewer_4" alt="avatar"><br>CameraSettings是控制镜头移动的核心，其中向我们展示了如何移动并操纵镜头。</p>
-        
-          <a class="article-more-a" href="/2019/07/01/MyGame/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -549,8 +356,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
