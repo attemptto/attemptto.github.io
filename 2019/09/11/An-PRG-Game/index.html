@@ -6,18 +6,23 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Hexo</title>
+  <title>An_PRG_Game（1） | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="我会坚持下去，就像坚持喜欢你一样">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="#Start A New RPG Game开始一个新的RPG游戏吧，我可是摩拳擦掌跃跃欲试了。这个游戏我要自己将其功能尽量详述 ###step(1)：点击地图的NavMesh然后自动寻路">
+<meta property="og:type" content="article">
+<meta property="og:title" content="An_PRG_Game（1）">
+<meta property="og:url" content="http://yoursite.com/2019/09/11/An-PRG-Game/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="我会坚持下去，就像坚持喜欢你一样">
+<meta property="og:description" content="#Start A New RPG Game开始一个新的RPG游戏吧，我可是摩拳擦掌跃跃欲试了。这个游戏我要自己将其功能尽量详述 ###step(1)：点击地图的NavMesh然后自动寻路">
 <meta property="og:locale" content="ZH">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/4DK9.gmnCCQ7omIFo9HTJ6Dc5383wU3ZIUMtlxgzFlo!/b/dL8AAAAAAAAA&bo=gAJnAYACZwECh6M!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/JhQlbnIy91GXx2lfQS2voLq.w5BsHPkwZJJs7KKSQCc!/b/dFIBAAAAAAAA&bo=gAc4BAAAAAADR9k!&rf=viewer_4">
+<meta property="og:image" content="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/bR0SL63jVwdGeF0L2f6RyeCs1VIPNoe9ob1z18duzxs!/b/dL4AAAAAAAAA&bo=gAc4BAAAAAADB5k!&rf=viewer_4">
+<meta property="og:updated_time" content="2019-09-11T15:32:16.677Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="我会坚持下去，就像坚持喜欢你一样">
+<meta name="twitter:title" content="An_PRG_Game（1）">
+<meta name="twitter:description" content="#Start A New RPG Game开始一个新的RPG游戏吧，我可是摩拳擦掌跃跃欲试了。这个游戏我要自己将其功能尽量详述 ###step(1)：点击地图的NavMesh然后自动寻路">
+<meta name="twitter:image" content="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/4DK9.gmnCCQ7omIFo9HTJ6Dc5383wU3ZIUMtlxgzFlo!/b/dL8AAAAAAAAA&bo=gAJnAYACZwECh6M!&rf=viewer_4">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -153,16 +158,14 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-    <article id="post-An-PRG-Game" class="article article-type-post  article-index" itemscope itemprop="blogPost">
+            <article id="post-An-PRG-Game" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/11/An-PRG-Game/">An_PRG_Game（1）</a>
+    <h1 class="article-title" itemprop="name">
+      An_PRG_Game（1）
     </h1>
   
 
@@ -177,11 +180,58 @@
       
         <p>#Start A New RPG Game<br>开始一个新的RPG游戏吧，我可是摩拳擦掌跃跃欲试了。<br>这个游戏我要自己将其功能尽量详述<br><img src="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/4DK9.gmnCCQ7omIFo9HTJ6Dc5383wU3ZIUMtlxgzFlo!/b/dL8AAAAAAAAA&bo=gAJnAYACZwECh6M!&rf=viewer_4" alt="avatar"></p>
 <p>###step(1)：点击地图的NavMesh然后自动寻路</p>
-        
-          <a class="article-more-a" href="/2019/09/11/An-PRG-Game/#more">more >></a>
-        
+<a id="more"></a>
+<p>此处我们使用代码来完成：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">if(Input.GetMouseButtonDown(0))</span><br><span class="line">&#123;</span><br><span class="line">    </span><br><span class="line">     Ray ray = cam.ScreenPointToRay(Input.mousePosition);    //点击一个point然后</span><br><span class="line">            RaycastHit hit;</span><br><span class="line">        </span><br><span class="line">           if (Physics.Raycast(ray, out hit,100))</span><br><span class="line">            &#123;</span><br><span class="line">                Pmotor.MoveToPoint(hit.point);                 //移动到点击的点</span><br><span class="line">                InterActable interActable = hit.collider.GetComponent&lt;InterActable&gt;();  //获取交互的目标</span><br><span class="line">                if (interActable!=null)</span><br><span class="line">                &#123;</span><br><span class="line">                    SetFocus(interActable);</span><br><span class="line">                &#125;</span><br><span class="line">                else</span><br><span class="line">                &#123;</span><br><span class="line">                    RemoveFocus();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<pre><code>在此Physics.Raycast中，我们传入了是三个参数，然后去判断了是否有交互的目标，如果没有，就setFocus，如果有，就RemoveFocus。</code></pre><p>###step(2):最基础的Camera控制<br>在LateUpdate中需要设置摄像机的位置，此时我们有传入一个target（transform），然后把偏移量加进来<br>具体代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">void LateUpdate()</span><br><span class="line">   &#123;</span><br><span class="line">       transform.position = target.position-offset*currentZoom;</span><br><span class="line">       </span><br><span class="line">       transform.LookAt(target.position+Vector3.up*pitch);</span><br><span class="line">       </span><br><span class="line">       transform.RotateAround(target.position,Vector3.up,yawInput);</span><br><span class="line">   &#125;</span><br></pre></td></tr></table></figure>
+
+<p>LateUpdate和FixedUpdate（物理引擎每秒50帧），而正常的Update有60帧，然后我们需要使tranform去调用LookAt这个方法然后RotateAround旋转YawInput:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">void Update()</span><br><span class="line">  &#123;</span><br><span class="line">      currentZoom -= Input.GetAxis(&quot;Mouse ScrollWheel&quot;) * ZoomSpeed;//   滑鼠滚轮的操作</span><br><span class="line">      currentZoom = Mathf.Clamp(currentZoom, minSpeed, maxSpeed);  //Clamp使值夹在min和max之间</span><br><span class="line"></span><br><span class="line">      yawInput += Input.GetAxis(&quot;Horizontal&quot;) * yawSpeed * Time.deltaTime; //按a和d操作水平轴的转动</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>此部分为Camera的控制</p>
+<p>###step(3):简单的道具Interact</p>
+<p>此部分是我之前从未想过设计的，但是教程里那个老哥太强大了。我佩服了。<br>首先我需要先将Item类写出，此部分不继承monobehavior，而是ScriptableObject，然后接下来的代码我也正在学习其中内容：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    new public string name = &quot;New Item&quot;;</span><br><span class="line">    public Sprite icon = null;</span><br><span class="line">    public bool isDefaulItem = false;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>然后卧槽，竟然会有一个这个东西<br><img src="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/JhQlbnIy91GXx2lfQS2voLq.w5BsHPkwZJJs7KKSQCc!/b/dFIBAAAAAAAA&bo=gAc4BAAAAAADR9k!&rf=viewer_4" alt="avatar"><br>然后我就建立个Item的东西，然后去新建一个Inventory类，然后加入一个Item数组，然后加入方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">public bool Add(Item item)</span><br><span class="line">&#123;</span><br><span class="line">    if (!item.isDefaulItem)</span><br><span class="line">    &#123;</span><br><span class="line">        if (items.Count &gt;= space)       //大于空间容量即无法存储</span><br><span class="line">        &#123;</span><br><span class="line">            Debug.Log(&quot;no enough room&quot;);</span><br><span class="line">            return false;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    items.Add(item);</span><br><span class="line">    </span><br><span class="line">    return true;</span><br><span class="line">&#125;</span><br><span class="line">    public void Remove(Item item)</span><br><span class="line">    &#123;</span><br><span class="line">        items.Remove(item);</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/bR0SL63jVwdGeF0L2f6RyeCs1VIPNoe9ob1z18duzxs!/b/dL4AAAAAAAAA&bo=gAc4BAAAAAADB5k!&rf=viewer_4" alt="avatar"><br>然后右边的Inspector中就出现了size的个数，我们此时看下面动图中的内容，看到我们已经将刀子捡起</p>
+<p>InterActable代码如下：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">// Start is called before the first frame update</span><br><span class="line">public float radius = 3f;</span><br><span class="line">public bool isFocus;</span><br><span class="line">public Transform player;</span><br><span class="line">public bool hasInteract = false;           //radius为互动半径，到达此范围时，即互动开始</span><br><span class="line"></span><br><span class="line">public virtual void Interact()</span><br><span class="line">&#123;</span><br><span class="line">    //This method is meant to be overrided</span><br><span class="line">&#125;</span><br><span class="line">private void Update()</span><br><span class="line">&#123;</span><br><span class="line">    if (isFocus &amp;&amp; !hasInteract)</span><br><span class="line">    &#123;</span><br><span class="line">        float distance = Vector3.Distance(player.position, transform.position);</span><br><span class="line">        if (distance &lt;= radius)</span><br><span class="line">        &#123;</span><br><span class="line">         //  Debug.Log(&quot;INTERACT&quot;);</span><br><span class="line">         Interact();  </span><br><span class="line">         hasInteract = true;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;                                  </span><br><span class="line"></span><br><span class="line">public void OnFocus(Transform playerTransform)</span><br><span class="line">&#123;</span><br><span class="line">    isFocus = true;</span><br><span class="line">    player = playerTransform;</span><br><span class="line">    hasInteract = false;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">public void DeOnFocus()</span><br><span class="line">&#123;</span><br><span class="line">    isFocus = false;</span><br><span class="line">    player = null;</span><br><span class="line">    hasInteract = false;</span><br><span class="line">&#125;</span><br><span class="line"> void OnDrawGizmosSelected()</span><br><span class="line">&#123;    </span><br><span class="line">    Gizmos.color=Color.yellow;</span><br><span class="line">    </span><br><span class="line">    Gizmos.DrawWireSphere(transform.position,radius);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>以上代码不做详述</p>
+
       
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/pmDOBzXo4ariR2TrffEqCNMwTL3Ow0plI4YIhXvAVuo!/b/dFYBAAAAAAAA&amp;bo=RgIzAgAAAAADB1c!&amp;rf=viewer_4">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
       
     </div>
     <div class="article-info article-info-index">
@@ -192,10 +242,73 @@
       
 
       
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//pan.baidu.com/share/qrcode?url=http://yoursite.com/2019/09/11/An-PRG-Game/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
       <div class="clearfix"></div>
     </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2019/09/04/BackToMyGame/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">BackToMyGame</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
 
 <aside class="wrap-side-operation">
     <div class="mod-side-operation">
@@ -215,442 +328,14 @@
 
 
 
-
   
-    <article id="post-BackToMyGame" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/09/04/BackToMyGame/">BackToMyGame</a>
-    </h1>
   
 
-        
-        <a href="/2019/09/04/BackToMyGame/" class="archive-article-date">
-  	<time datetime="2019-09-04T14:13:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-09-04</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#归来仍是游戏狂</p>
-<p>在这一个暑假，我大部分时间都用来复习考研了，但是数学题还是不会做，数据结构也准备开始准备了。<br>我是功夫没有下到。所以如果没考上也没啥遗憾的，毕竟我还可以凭借游戏混口饭吃。</p>
-        
-          <a class="article-more-a" href="/2019/09/04/BackToMyGame/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-InteractionManager" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/25/InteractionManager/">InteractionManager的使用</a>
-    </h1>
   
 
-        
-        <a href="/2019/07/25/InteractionManager/" class="archive-article-date">
-  	<time datetime="2019-07-25T15:04:54.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-25</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>InteractionManager我需要他是在我开宝箱，打boss，做最后一击的时候。<br><img src="http://a4.qpic.cn/psb?/V11Gv0JC0zhQAU/0afSeV8UA7Ks0lgcthkrmknTIJJ9SsHOpN6HZUBDFHE!/c/dPMAAAAAAAAA&ek=1&kp=1&pt=0&bo=AQWAAnYHugMDVzw!&tl=1&vuin=1178278978&tm=1564099200&sce=60-2-2&rf=0-0" alt="avatar"> //此处是我的红色Cube（具体是Sensor层，因为我需要在后续，使我的Sensor和其相撞，然后输出相撞的名字，当然你也可以在此添加更多的物件我就不赘述了）</p>
-        
-          <a class="article-more-a" href="/2019/07/25/InteractionManager/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-DirectorManager" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/20/DirectorManager/">DirectorManager设置</a>
-    </h1>
   
 
-        
-        <a href="/2019/07/20/DirectorManager/" class="archive-article-date">
-  	<time datetime="2019-07-20T14:43:21.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-20</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>关联的图片我先放上来啊：</p>
-<p><img src="http://a4.qpic.cn/psb?/V11Gv0JC0zhQAU/72O2pe386h1WKWBnRRDpTUfXHFTX1RLpIwtX4AKwT*I!/b/dFMBAAAAAAAA&ek=1&kp=1&pt=0&bo=gAc4BIAHOAQDJwI!&tl=1&vuin=1178278978&tm=1563631200&sce=60-2-2&rf=viewer_4" alt="avatar"></p>
-<p>DirectorManager，首先在开始的时候直接给所添加的物件附上一个PlayableDirector：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[RequireComponent(typeof(PlayableDirector))]</span><br></pre></td></tr></table></figure>
-        
-          <a class="article-more-a" href="/2019/07/20/DirectorManager/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-SetTimeline" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/19/SetTimeline/">Timeline的设置和锁定Animation的操作</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/19/SetTimeline/" class="archive-article-date">
-  	<time datetime="2019-07-19T12:31:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-19</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Timeline和具体锁定Animation的操作<br><img src="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/L7fxg08tVlIFutS50prqx9dwHmO5Bs8AlJjiJmTdfzY!/b/dDcBAAAAAAAA&bo=gAc4BIAHOAQDByI!&rf=viewer_4" alt="avatar"></p>
-<p>此部分篇幅较大，所以希望可以自己慢慢吸收。</p>
-<p>Part1   新增Timeline<br>首先创建一个新的Gameobject，然后在上方的component选择Playable的playable的director。<br>此时会出现一个以下的内容：</p>
-        
-          <a class="article-more-a" href="/2019/07/19/SetTimeline/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-CounterBackAndStunned" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/16/CounterBackAndStunned/">CounterBack And Stunned</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/16/CounterBackAndStunned/" class="archive-article-date">
-  	<time datetime="2019-07-16T14:30:03.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-16</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>盾反状态为Dark souls中的灵魂动作，此次还会加上上一张部分的剩余（weapon模块）。我们先来看一下盾反的动画：<br><img src="http://www.3dmgame.com/uploads/allimg/160608/313_160608175623_1.gif" alt="avatar"><br>首先在状态机中，放入stunned和counterback，stunned为子状态机，而counterBack则不需要。<br>逻辑如下，我们需要在防御敌人进攻时，按下盾反，那么此时应该是左手的LeftIsSheild消勾，此时左手为武器状态。</p>
-        
-          <a class="article-more-a" href="/2019/07/16/CounterBackAndStunned/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-BattleManager" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/05/BattleManager/">BattleManager</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/05/BattleManager/" class="archive-article-date">
-  	<time datetime="2019-07-05T14:13:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-05</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>#战斗管理员(BattleManager)部分和动作管理员(ActorManager)</p>
-<p>战斗管理员和动作管理员的关系如下图，在此用了一个双向的箭头是因为，这两个部分可以直接相互传递信息<br><img src="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/cdpmO4T9yylG2D6.v2tQR7ilAYxWuMVPZpt8rJRGuT0!/b/dL8AAAAAAAAA&bo=9wLHAQAAAAADBxE!&rf=viewer_4" alt="avatar"></p>
-        
-          <a class="article-more-a" href="/2019/07/05/BattleManager/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
-    <article id="post-MyGame" class="article article-type-post  article-index" itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2019/07/01/MyGame/">3D Game Kit 的CameraSetting的作用</a>
-    </h1>
-  
-
-        
-        <a href="/2019/07/01/MyGame/" class="archive-article-date">
-  	<time datetime="2019-07-01T14:13:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2019-07-01</time>
-</a>
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p><img src="http://m.qpic.cn/psb?/V11Gv0JC0zhQAU/eFNIj45gZwYgtdb5n8dfbAcT4zeejimDfP**SxJ5wx4!/b/dL8AAAAAAAAA&bo=gAJnAQAAAAACl1c!&rf=viewer_4" alt="avatar"><br>CameraSettings是控制镜头移动的核心，其中向我们展示了如何移动并操纵镜头。</p>
-        
-          <a class="article-more-a" href="/2019/07/01/MyGame/#more">more >></a>
-        
-      
-
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-    </div>
-</aside>
-
-
-
-
-  
   
 
 
@@ -673,8 +358,8 @@
     <script>
 	var yiliaConfig = {
 		mathjax: false,
-		isHome: true,
-		isPost: false,
+		isHome: false,
+		isPost: true,
 		isArchive: false,
 		isTag: false,
 		isCategory: false,
